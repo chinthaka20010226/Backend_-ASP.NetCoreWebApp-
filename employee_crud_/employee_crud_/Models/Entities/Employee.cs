@@ -32,5 +32,12 @@ namespace employee_crud_.Models.Entities
         // Validation Part,
         [GreaterThan(0)]
         public double Salary { get; set; }
+
+        [ForeignKey("Department")]
+        [Column("Department_Id")]
+        [DisplayName("Department ID")]
+        public int DId { get; set; }
+
+        public Department? Department { get; set; }
     }
 }
