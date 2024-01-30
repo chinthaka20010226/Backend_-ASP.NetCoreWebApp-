@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using 
+using employee_crud_.Models.Validation;
 
 namespace employee_crud_.Models.Entities
 {
@@ -29,6 +29,8 @@ namespace employee_crud_.Models.Entities
 
         [Column("Salary")]
         [DisplayName("Salary")]
+        // Validation Part,
+        [GreaterThan(0)]
         public double Salary { get; set; }
     }
 }
