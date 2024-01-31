@@ -11,3 +11,55 @@
 ///// Task<Employee?> GetEmployeeById(int id);
 
 ----> Task<Employee?>: Indicates that the method returns a 'Task' representing an asynchronous operation that will produce either an Employee object or null.
+
+
+
+
+
+
+
+///// return employee ?? throw new NotFoundException($"Employee with id {id} not found");
+
+----> employee ?? throw new NotFoundException($"Employee with id {id} not found"): 
+      This is the null-coalescing operator (??). 
+      It checks if the employee variable is null. If employee is not null, it returns employee. 
+      If employee is null, it throws a NotFoundException with the specified message: "Employee with id {id} not found".
+
+----> throw new NotFoundException($"Employee with id {id} not found"): 
+      This part creates a new instance of the NotFoundException class, passing the specified message as a parameter.
+
+
+
+
+
+
+
+
+
+///// await
+
+public async Task MyMethodAsync()
+{
+    // Asynchronous operations can be awaited here
+}
+
+public async Task<int> SumAsync()
+{
+    int result = await LongRunningOperationAsync();
+    return result;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
