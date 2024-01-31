@@ -13,7 +13,7 @@ namespace employee_crud_.Models.Entities
 
         [Column("FirstName"), MaxLength(20)]
         [DisplayName("First Name")]
-        public String FNAme { get; set; }
+        public String FName { get; set; }
 
         [Column("LastName"), MaxLength(20)]
         [DisplayName("Last Name")]
