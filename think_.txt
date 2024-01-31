@@ -1,0 +1,8 @@
+///// Task<Employee> GetEmployeeById(int id);
+
+----> Task<Employee>: Indicates that the method returns a 'Task' representing the asynchronous operation of fetching an Employee object.
+
+
+///// Task<IEnumerable<Employee>> GetEmployees();
+
+----> Task<IEnumerable<Employee>>: Indicates that the method returns a 'Task' representing an asynchronous operation that will produce an enumerable collection of Employee objects.
