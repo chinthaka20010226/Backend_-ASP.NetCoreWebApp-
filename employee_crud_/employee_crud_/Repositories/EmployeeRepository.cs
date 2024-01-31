@@ -3,12 +3,8 @@ using employee_crud_.Interfaces.Repositories;
 
 namespace employee_crud_.Repositories
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class EmployeeRepository(DataContext dataContext) : IEmployeeRepository
     {
-        private readonly DataContext _dataContext;
-        EmployeeRepository(DataContext dataContext)
-        {
-            _dataContext = dataContext;
-        }
+        
     }
 }
