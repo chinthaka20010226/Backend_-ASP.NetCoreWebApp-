@@ -25,7 +25,7 @@ namespace employee_crud_.Models.Entities
 
         [Column("DOB")]
         [DisplayName("Date of Birth")]
-        public DateOnly Dob { get; set; }
+        public DateTime Dob { get; set; }
 
         [Column("Salary")]
         [DisplayName("Salary")]
