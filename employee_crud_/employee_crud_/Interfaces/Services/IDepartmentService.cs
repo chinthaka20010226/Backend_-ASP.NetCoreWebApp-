@@ -4,7 +4,7 @@ namespace employee_crud_.Interfaces.Services
 {
     public interface IDepartmentService
     {
-        Task<Department> GetDepartmentId(int id);
+        Task<Department> GetDepartmentById(int id);
         Task<IEnumerable<Department>> GetDepartment();
         Task<Department> InsertDepartment(Department department);
         Task<Department> UpdateDepartment(Department department);
