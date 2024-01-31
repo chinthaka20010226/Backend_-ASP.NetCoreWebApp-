@@ -17,5 +17,10 @@ namespace employee_crud_.Services
 
             return await (employee ?? throw new NotFoundException($"Employee with id {id} not found"));
         }
+
+        public async Task<IEnumerable<Employee>> GetEmployees()
+        {
+            return await employees.GetEmployees();
+        }
     }
 }

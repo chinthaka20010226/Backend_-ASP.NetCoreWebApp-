@@ -39,5 +39,10 @@ namespace employee_crud_.Models.Entities
         public int DId { get; set; }
 
         public Department? Department { get; set; }
+
+        internal static object Include(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
