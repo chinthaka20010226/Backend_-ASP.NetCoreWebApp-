@@ -23,5 +23,10 @@ namespace employee_crud_.Repositories
         {
             Employees.Add(employee);
         }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            Employees.Update(employee);
+        }
     }
 }

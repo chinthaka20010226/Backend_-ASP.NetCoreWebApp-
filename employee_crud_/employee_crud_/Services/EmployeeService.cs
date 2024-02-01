@@ -32,5 +32,17 @@ namespace employee_crud_.Services
 
             return await (insertedEmployee ?? throw new NotFoundException($"Employee with name {employee.FName} not found"));
         }
+
+        public async Task<Employee> UpdateEmployee(Employee employee)
+        {
+            var employeeToUpdate = await employees.GetEmployeeById(employee.Id) ?? throw new NotFoundException($"Employee with id {employee.Id} not found");
+
+            employeeToUpdate.FName = employee.FName == "" ? employeeToUpdate.FName : employee.FName;
+
+            employees.UpdateEmployee(employeeToUpdate);
+            employees.Save();
+
+            return employeeToUpdate;
+        }
     }
 }
