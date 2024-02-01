@@ -44,5 +44,20 @@ namespace employee_crud_.Services
 
             return employeeToUpdate;
         }
+
+        public async Task<Employee> DeleteEmployee(int id)
+        {
+            if(id <= 0)
+            {
+                throw new InvalidArgumentException("Id must be greater than 0");
+            }
+
+            var employeeToDelete = await employees.GetEmployeeById(id) ?? throw new NotFoundException($"Employee with id {id} not found");
+
+            employees.DeleteEmployee(id);
+            await employees.Save();
+
+            return employeeToDelete;
+        }
     }
 }

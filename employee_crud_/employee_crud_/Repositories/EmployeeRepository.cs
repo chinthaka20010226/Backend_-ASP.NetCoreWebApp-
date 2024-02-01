@@ -28,5 +28,15 @@ namespace employee_crud_.Repositories
         {
             Employees.Update(employee);
         }
+
+        public async void DeleteEmployee(int id)
+        {
+            var employee = await Employees.FindAsync(id);
+
+            if (employee != null)
+            {
+                Employees.Remove(employee);
+            }
+        }
     }
 }
