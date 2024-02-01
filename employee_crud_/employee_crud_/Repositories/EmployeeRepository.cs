@@ -9,9 +9,14 @@ namespace employee_crud_.Repositories
     {
         private DbSet<Employee> Employees { get; set; } = dataContext.Employee;
 
-        public async Task<Employee> GetEmployeeById(int id)
+        public async Task<Employee?> GetEmployeeById(int id)
         {
             return await Employees.FindAsync(id);
+        }
+
+        public async Task<Employee?> GetEmployeeByFirstName(String name)
+        {
+            return await Employees.FirstOrDefaultAsync(employee => employee.FName == name);
         }
 
         public async Task<IEnumerable<Employee>> GetEmployees()

@@ -10,7 +10,7 @@ using employee_crud_.Data;
 
 namespace employee_crud_.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(_dataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

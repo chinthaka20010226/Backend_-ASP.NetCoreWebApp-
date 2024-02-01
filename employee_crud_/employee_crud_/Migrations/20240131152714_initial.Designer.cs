@@ -11,7 +11,7 @@ using employee_crud_.Data;
 
 namespace employee_crud_.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(_dataContext))]
     [Migration("20240131152714_initial")]
     partial class initial
     {

@@ -13,9 +13,9 @@ namespace employee_crud_.Services
                 throw new InvalidArgumentException("must bo grater than 0");
             }
 
-            var employee = employees.GetEmployeeById(id);
+            var employee = await employees.GetEmployeeById(id);
 
-            return await (employee ?? throw new NotFoundException($"Employee with id {id} not found"));
+            return employee ?? throw new NotFoundException($"Employee with id {id} not found");
         }
 
         public async Task<IEnumerable<Employee>> GetEmployees()
@@ -28,9 +28,9 @@ namespace employee_crud_.Services
             employees.InsertEmployee(employee);
             await employees.Save();
 
-            var insertedEmployee = employees.GetEmployeeByFirstName(employee.FName);
+            var insertedEmployee = await employees.GetEmployeeByFirstName(employee.FName);
 
-            return await (insertedEmployee ?? throw new NotFoundException($"Employee with name {employee.FName} not found"));
+            return insertedEmployee ?? throw new NotFoundException($"Employee with name {employee.FName} not found");
         }
 
         public async Task<Employee> UpdateEmployee(Employee employee)
