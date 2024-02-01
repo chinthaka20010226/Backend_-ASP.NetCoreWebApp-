@@ -56,6 +56,14 @@ public async Task<int> SumAsync()
 
 
 
+///// public class DepartmentController(IDepartmentService departmentService) : ControllerBase
+      {
+      }
+
+----> define a constructor directly within your DepartmentController class
+
+
+
 
 
 

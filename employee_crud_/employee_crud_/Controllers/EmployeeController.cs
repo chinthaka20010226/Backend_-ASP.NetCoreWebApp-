@@ -82,7 +82,7 @@ namespace employee_crud_.Controllers
 
                 if(employee.Id != id)
                 {
-                    return BadRequest("Id in body must match id in rout");
+                    return BadRequest("Id in body must match id in route");
                 }
 
                 var _employee = await _employeeService.UpdateEmployee(employee);
