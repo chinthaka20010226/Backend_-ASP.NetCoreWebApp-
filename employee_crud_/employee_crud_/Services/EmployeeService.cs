@@ -22,5 +22,15 @@ namespace employee_crud_.Services
         {
             return await employees.GetEmployees();
         }
+
+        public async Task<Employee> InsertEmployee(Employee employee)
+        {
+            employees.InsertEmployee(employee);
+            await employees.Save();
+
+            var insertedEmployee = employees.GetEmployeeByFirstName(employee.FName);
+
+            return await (insertedEmployee ?? throw new NotFoundException($"Employee with name {employee.FName} not found"));
+        }
     }
 }
