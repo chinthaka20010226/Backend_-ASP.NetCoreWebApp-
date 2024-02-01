@@ -18,5 +18,10 @@ namespace employee_crud_.Repositories
         {
             return await Employees.Include("Department").ToListAsync();
         }
+
+        public void InsertEmployee(Employee employee)
+        {
+            Employees.Add(employee);
+        }
     }
 }
