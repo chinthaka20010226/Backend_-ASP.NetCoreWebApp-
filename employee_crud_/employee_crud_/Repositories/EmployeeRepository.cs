@@ -38,5 +38,10 @@ namespace employee_crud_.Repositories
                 Employees.Remove(employee);
             }
         }
+
+        public async Task Save()
+        {
+            await dataContext.SaveChangesAsync();
+        }
     }
 }
